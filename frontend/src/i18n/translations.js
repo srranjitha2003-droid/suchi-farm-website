@@ -14,9 +14,9 @@ const translations = {
       eyebrow: "Silk Cocoons · Mulberry · Fishery",
       establishedYear: "A Family Legacy",
       region: "Karnataka · India",
-      tagline: "Nurturing Heritage, Cultivating Purity",
+      tagline: "Rooted in Tradition, Grown with Care",
       description:
-        "A family legacy crafting premium silk cocoons and raising responsible freshwater fish in B. Seehalli, Karnataka — rooted in tradition, refined for today.",
+        "A family-owned agricultural venture nestled in the heart of B. Seehalli, Karnataka. Dedicated to sustainable sericulture and freshwater fish farming, we blend generations of expertise with responsible farming practices to deliver quality, purity, and trust.",
       getDirections: "Get Directions",
       ourServices: "Our Services",
       scroll: "Scroll",
@@ -114,9 +114,9 @@ const translations = {
       eyebrow: "ರೇಷ್ಮೆ ಗೂಡು · ಹಿಪ್ಪುನೇರಳೆ · ಮೀನು ಸಾಕಣೆ",
       establishedYear: "ಒಂದು ಕುಟುಂಬದ ಪರಂಪರೆ",
       region: "ಕರ್ನಾಟಕ · ಭಾರತ",
-      tagline: "ಪರಂಪರೆಯನ್ನು ಪೋಷಿಸುತ್ತಾ, ಶುದ್ಧತೆಯನ್ನು ಬೆಳೆಸುತ್ತಾ",
+      tagline: "ಸಂಪ್ರದಾಯದಲ್ಲಿ ಬೇರೂರಿದೆ, ಕಾಳಜಿಯಿಂದ ಬೆಳೆದಿದೆ",
       description:
-        "ಬಿ. ಸೀಹಳ್ಳಿ, ಕರ್ನಾಟಕದಲ್ಲಿ ಉತ್ಕೃಷ್ಟ ರೇಷ್ಮೆ ಗೂಡುಗಳನ್ನು ತಯಾರಿಸುತ್ತಿರುವ ಮತ್ತು ಜವಾಬ್ದಾರಿಯುತವಾಗಿ ಸಿಹಿ ನೀರಿನ ಮೀನು ಸಾಕಣೆ ಮಾಡುತ್ತಿರುವ ನಮ್ಮ ಕುಟುಂಬದ ಪರಂಪರೆ — ಪರಂಪರೆಯಲ್ಲಿ ಬೇರೂರಿದ, ಇಂದಿಗೆ ತಕ್ಕಂತೆ ಪರಿಷ್ಕೃತ.",
+        "ಕರ್ನಾಟಕದ ಬಿ. ಸೀಹಳ್ಳಿಯ ಹೃದಯಭಾಗದಲ್ಲಿ ನೆಲೆಗೊಂಡಿರುವ ಕುಟುಂಬ ಸ್ವಾಮ್ಯದ ಕೃಷಿ ಉದ್ಯಮ. ಸುಸ್ಥಿರ ರೇಷ್ಮೆ ಕೃಷಿ ಮತ್ತು ಸಿಹಿನೀರಿನ ಮೀನು ಸಾಕಣೆಗೆ ಸಮರ್ಪಿತವಾಗಿರುವ ನಾವು, ಗುಣಮಟ್ಟ, ಶುದ್ಧತೆ ಮತ್ತು ವಿಶ್ವಾಸವನ್ನು ನೀಡಲು ಜವಾಬ್ದಾರಿಯುತ ಕೃಷಿ ಪದ್ಧತಿಗಳೊಂದಿಗೆ ತಲೆಮಾರುಗಳ ಪರಿಣತಿಯನ್ನು ಸಂಯೋಜಿಸುತ್ತೇವೆ.",
       getDirections: "ದಾರಿ ಪಡೆಯಿರಿ",
       ourServices: "ನಮ್ಮ ಸೇವೆಗಳು",
       scroll: "ಕೆಳಗೆ",
