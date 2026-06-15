@@ -20,9 +20,9 @@ export const site = {
   business: {
     name: "Suchi Farm",
     nameKannada: "ಸುಚಿ ಫಾರಂ",
-    tagline: "Nurturing Heritage, Cultivating Purity",
+    tagline: "Rooted in Tradition, Grown with Care",
     description:
-      "A family legacy crafting premium silk cocoons and raising responsible freshwater fish in B. Seehalli, Karnataka — rooted in tradition, refined for today.",
+      "Suchi Farm is a family-owned agricultural venture nestled in the heart of B. Seehalli, Karnataka. Dedicated to sustainable sericulture and freshwater fish farming, we blend generations of expertise with responsible farming practices to deliver quality, purity, and trust. Every cocoon we nurture and every harvest we produce reflects our unwavering commitment to nature, heritage, and excellence. At Suchi Farm, we believe that true success grows from respecting the land, preserving tradition, and embracing sustainable practices for future generations.",
     establishedYear: "A Family Legacy",
   },
   contact: {
