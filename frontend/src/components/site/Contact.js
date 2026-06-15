@@ -1,13 +1,6 @@
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 
-const items = [
-  { icon: Phone, label: "Phone", valueKey: "phone", href: (v) => `tel:${v.replace(/\s+/g, "")}` },
-  { icon: Mail, label: "Email", valueKey: "email", href: (v) => `mailto:${v}` },
-  { icon: MapPin, label: "Address", valueKey: "address", href: null },
-  { icon: Clock, label: "Hours", valueKey: "hours", href: null },
-];
-
 export default function Contact() {
   const { contact } = site;
   return (
@@ -38,41 +31,95 @@ export default function Contact() {
             </p>
 
             <div className="mt-12 space-y-2">
-              {items.map((it) => {
-                const Icon = it.icon;
-                const v = contact[it.valueKey];
-                const href = it.href ? it.href(v) : null;
-                const Content = (
-                  <div className="flex items-start gap-5 py-5 border-b border-[#E8E2D9] group">
-                    <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0 group-hover:bg-[#1A362D] transition-colors duration-300">
-                      <Icon className="w-4 h-4 text-[#1A362D] group-hover:text-[#C5A059] transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
-                        {it.label}
-                      </p>
-                      <p
-                        data-testid={`contact-${it.valueKey}`}
-                        className="text-[#1A362D] text-lg font-light"
-                      >
-                        {v}
-                      </p>
+              {/* Phones */}
+              <div className="py-5 border-b border-[#E8E2D9] group">
+                <div className="flex items-start gap-5">
+                  <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0 group-hover:bg-[#1A362D] transition-colors duration-300">
+                    <Phone className="w-4 h-4 text-[#1A362D] group-hover:text-[#C5A059] transition-colors duration-300" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-2">
+                      Phone
+                    </p>
+                    <div className="flex flex-col gap-1">
+                      {contact.phones.map((p, i) => (
+                        <a
+                          key={p}
+                          href={`tel:${p.replace(/\s+/g, "")}`}
+                          data-testid={`contact-phone-${i}`}
+                          className="text-[#1A362D] text-lg font-light hover:text-[#B85C38] transition-colors w-fit"
+                        >
+                          {p}
+                        </a>
+                      ))}
                     </div>
                   </div>
-                );
-                return href ? (
-                  <a
-                    key={it.label}
-                    href={href}
-                    data-testid={`contact-${it.valueKey}-link`}
-                    className="block"
-                  >
-                    {Content}
-                  </a>
-                ) : (
-                  <div key={it.label}>{Content}</div>
-                );
-              })}
+                </div>
+              </div>
+
+              {/* Email */}
+              <a
+                href={`mailto:${contact.email}`}
+                data-testid="contact-email-link"
+                className="block"
+              >
+                <div className="flex items-start gap-5 py-5 border-b border-[#E8E2D9] group">
+                  <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0 group-hover:bg-[#1A362D] transition-colors duration-300">
+                    <Mail className="w-4 h-4 text-[#1A362D] group-hover:text-[#C5A059] transition-colors duration-300" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
+                      Email
+                    </p>
+                    <p
+                      data-testid="contact-email"
+                      className="text-[#1A362D] text-lg font-light break-all"
+                    >
+                      {contact.email}
+                    </p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Address */}
+              <div className="py-5 border-b border-[#E8E2D9] group">
+                <div className="flex items-start gap-5">
+                  <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4 text-[#1A362D]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
+                      Address
+                    </p>
+                    <p
+                      data-testid="contact-address"
+                      className="text-[#1A362D] text-lg font-light"
+                    >
+                      {contact.address}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="py-5 border-b border-[#E8E2D9] group">
+                <div className="flex items-start gap-5">
+                  <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0">
+                    <Clock className="w-4 h-4 text-[#1A362D]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
+                      Hours
+                    </p>
+                    <p
+                      data-testid="contact-hours"
+                      className="text-[#1A362D] text-lg font-light"
+                    >
+                      {contact.hours}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <a

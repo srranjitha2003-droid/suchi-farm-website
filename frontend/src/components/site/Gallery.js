@@ -1,3 +1,4 @@
+import { Play } from "lucide-react";
 import { site } from "@/data/site";
 
 export default function Gallery() {
@@ -34,20 +35,43 @@ export default function Gallery() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[220px] md:auto-rows-[260px] gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[220px] md:auto-rows-[280px] gap-4 md:gap-6">
           {site.gallery.map((g, i) => (
             <div
               key={i}
               data-testid={`gallery-item-${i}`}
-              className={`relative overflow-hidden rounded-3xl group ${g.span}`}
+              className={`relative overflow-hidden rounded-3xl group bg-[#1A362D] ${g.span}`}
             >
-              <img
-                src={g.src}
-                alt={g.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A362D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="absolute bottom-5 left-5 text-[#FAF8F5] text-[11px] tracking-[0.25em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {g.type === "video" ? (
+                <>
+                  <video
+                    src={g.src}
+                    poster={g.poster}
+                    data-testid={`gallery-video-${i}`}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    preload="auto"
+                    onLoadedData={(e) => {
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                  />
+                  <div className="absolute top-5 left-5 bg-[#FAF8F5]/95 backdrop-blur-md rounded-full px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase text-[#1A362D] font-semibold flex items-center gap-1.5 pointer-events-none">
+                    <Play className="w-3 h-3 fill-[#1A362D]" />
+                    Live
+                  </div>
+                </>
+              ) : (
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A362D]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <span className="absolute bottom-5 left-5 right-5 text-[#FAF8F5] text-[11px] tracking-[0.25em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 {g.alt}
               </span>
             </div>

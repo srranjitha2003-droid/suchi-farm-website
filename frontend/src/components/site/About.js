@@ -13,9 +13,12 @@ export default function About() {
           <div className="md:col-span-6 lg:col-span-5">
             <p
               data-testid="about-overline"
-              className="text-[11px] tracking-[0.35em] uppercase text-[#B85C38] font-semibold mb-8"
+              className="text-[11px] tracking-[0.35em] uppercase text-[#B85C38] font-semibold mb-4"
             >
               — {about.overline}
+            </p>
+            <p className="font-kannada text-3xl text-[#7A8C84] mb-6">
+              {site.business.nameKannada}
             </p>
             <h2
               data-testid="about-title"

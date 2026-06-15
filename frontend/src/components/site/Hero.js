@@ -9,11 +9,11 @@ export default function Hero() {
       className="relative min-h-[100vh] flex items-end overflow-hidden"
     >
       <img
-        src="https://images.unsplash.com/photo-1533757879476-8f4a3cb1ae4b?w=2000&q=80"
-        alt="Suchi Farm landscape"
+        src={site.hero.image}
+        alt="Suchi Farm mulberry plantation"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1A362D]/55 via-[#1A362D]/30 to-[#1A362D]/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1A362D]/55 via-[#1A362D]/40 to-[#1A362D]/90" />
 
       {/* Top overline */}
       <div className="absolute top-28 left-6 md:left-12 right-6 md:right-12 flex justify-between items-center text-[#FAF8F5]/80">
@@ -34,7 +34,7 @@ export default function Hero() {
             data-testid="hero-eyebrow"
             className="text-[11px] tracking-[0.4em] uppercase text-[#C5A059] font-semibold mb-8 fade-up"
           >
-            Silk · Fishery · Aquaculture
+            Sericulture · Mulberry · Silk Cocoons
           </p>
           <h1
             data-testid="hero-title"

@@ -1,21 +1,38 @@
 // Single source of truth for site content. Edit these fields anytime.
+const A = "https://customer-assets.emergentagent.com/job_family-store-hub-1/artifacts";
+
+// Verified asset mapping (based on visual inspection):
+const ASSETS = {
+  mulberryField:    `${A}/wsyz8kwd_62d68a61-4714-4d8d-b3e9-a695e582ad00.JPG`, // green mulberry plantation rows
+  farmBuilding:     `${A}/vv1xv8ba_b5c2207d-c486-42e8-a7e8-ad815c947ad3.JPG`, // farm entrance w/ Kannada signboard
+  cocoonsPile:      `${A}/4x48nhrd_c6d9b91f-e14f-4733-9a86-2e53eab9b511.JPG`, // pile of white silk cocoons
+  cocoonsNetWide:   `${A}/7wndfjsq_87a35f11-49ed-4d41-a98b-735df3a3bbe7.JPG`, // cocoons in orange netting (wide)
+  cocoonsNetClose:  `${A}/m8qkkmy4_da5058a8-a598-4b52-b05f-54bdcb67c5a3.JPG`, // cocoons in orange netting (close)
+  silkwormsOnStems: `${A}/m8dyqi6w_8955d5ef-21b2-4e3f-b423-099951297ea6.JPG`, // silkworms feeding on mulberry stems
+  silkwormsTray:    `${A}/0honqi1m_17034899-ab9a-4bab-82e1-bc04bacae899.JPG`, // silkworms in tray, sunlit
+  video1:           `${A}/b93v5ixx_622452ff-979a-4c7c-9bfb-3d2465e15090.MP4`,
+  video2:           `${A}/06eiexh7_cd631f24-0b2b-43cb-8537-93820e32fd40.MP4`,
+};
+
 export const site = {
   business: {
     name: "Suchi Farm",
+    nameKannada: "ಸುಚಿ ಫಾರಂ",
     tagline: "Nurturing Heritage, Cultivating Purity",
     description:
-      "A family legacy crafting premium silk cocoons, raising responsible fishery, and pioneering sustainable aquaculture — rooted in tradition, refined for today.",
-    establishedYear: "Est. Two Generations",
+      "A family legacy crafting premium silk cocoons from our own mulberry plantation in B. Seehalli, Karnataka — rooted in tradition, refined for today.",
+    establishedYear: "A Family Legacy",
   },
   contact: {
-    phone: "+91 00000 00000",
-    email: "hello@suchifarm.in",
-    address: "SUCHI Farm Productions, B. Seehalli, Karnataka 571101",
-    hours: "Mon – Sat · 8:00 AM – 6:00 PM",
+    phones: ["+91 96402 14052", "+91 70134 43123"],
+    email: "scravikumar1968@gmail.com",
+    address: "Suchi Farm, Silk Rearing House, B. Seehalli, Karnataka 571101",
+    hours: "7:00 AM – 7:00 PM · All days of the week",
     mapsLink: "https://maps.app.goo.gl/81Z4HTzcm4U78QpP6?g_st=ic",
     embedSrc:
       "https://www.google.com/maps?q=SUCHI+FARM+Productions,+B.+Seehalli,+Karnataka+571101&output=embed&z=15",
   },
+  media: ASSETS,
   nav: [
     { label: "Home", href: "#home", id: "home" },
     { label: "About", href: "#about", id: "about" },
@@ -29,55 +46,64 @@ export const site = {
       title: "Silk Cocoon Production",
       tag: "Sericulture",
       description:
-        "Premium mulberry-fed silkworms yielding lustrous, even-fibre cocoons. Every batch is hand-graded to honour the craft passed down through our family.",
-      image:
-        "https://images.unsplash.com/photo-1677142707414-e6ce16085a9a?w=1200&q=80",
+        "Premium mulberry-fed silkworms reared in our dedicated rearing house, yielding lustrous, even-fibre cocoons graded entirely by hand.",
+      image: ASSETS.cocoonsPile,
+      icon: "Award",
+    },
+    {
+      title: "Mulberry Cultivation",
+      tag: "Plantation",
+      description:
+        "Carefully tended mulberry rows feed our silkworms — the foundation of every fine cocoon, grown on our own land without shortcuts.",
+      image: ASSETS.mulberryField,
+      icon: "Sprout",
+    },
+    {
+      title: "Cocoon Grading",
+      tag: "Hand-graded",
+      description:
+        "Every cocoon is sorted by hand on traditional racks and netting — only the finest are passed on to buyers and weavers.",
+      image: ASSETS.cocoonsNetWide,
       icon: "Leaf",
-    },
-    {
-      title: "Fishery",
-      tag: "Freshwater",
-      description:
-        "Healthy, ethically raised fish from clean, oxygen-rich ponds — supplying local markets and discerning kitchens with truly fresh produce.",
-      image:
-        "https://images.unsplash.com/photo-1541441056316-443fff347c40?w=1200&q=80",
-      icon: "Fish",
-    },
-    {
-      title: "Aquaculture",
-      tag: "Sustainable",
-      description:
-        "Modern aquatic farming integrated with natural ecosystems — balancing yield with the health of water, soil, and the families that depend on them.",
-      image:
-        "https://images.unsplash.com/photo-1766744489655-328ec3d4f417?w=1200&q=80",
-      icon: "Droplets",
     },
   ],
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1580133750060-05e667fe0318?w=1200&q=80",
-      alt: "Silk cocoons close-up",
+      type: "image",
+      src: ASSETS.cocoonsNetWide,
+      alt: "Premium silk cocoons in rearing nets",
       span: "md:col-span-7 md:row-span-2",
     },
     {
-      src: "https://images.unsplash.com/photo-1727696726111-b20cfcb027bb?w=900&q=80",
-      alt: "Mulberry leaves",
+      type: "image",
+      src: ASSETS.cocoonsPile,
+      alt: "Hand-graded white silk cocoons",
       span: "md:col-span-5",
     },
     {
-      src: "https://images.unsplash.com/photo-1528164604878-28ea0fb4f462?w=900&q=80",
-      alt: "Fishery pond",
+      type: "image",
+      src: ASSETS.mulberryField,
+      alt: "Our mulberry plantation",
       span: "md:col-span-5",
     },
     {
-      src: "https://images.unsplash.com/photo-1654526645468-9ae1cde48fe2?w=900&q=80",
-      alt: "Aquaculture tanks",
-      span: "md:col-span-6",
+      type: "image",
+      src: ASSETS.silkwormsTray,
+      alt: "Silkworms inside the rearing house",
+      span: "md:col-span-4",
     },
     {
-      src: "https://images.unsplash.com/photo-1533757879476-8f4a3cb1ae4b?w=900&q=80",
-      alt: "Farm landscape",
-      span: "md:col-span-6",
+      type: "image",
+      src: ASSETS.silkwormsOnStems,
+      alt: "Silkworms feeding on fresh mulberry",
+      span: "md:col-span-4",
+    },
+    {
+      type: "video",
+      src: ASSETS.video1,
+      poster: ASSETS.cocoonsNetClose,
+      alt: "Inside the rearing house",
+      span: "md:col-span-4",
     },
   ],
   testimonials: [
@@ -89,9 +115,9 @@ export const site = {
     },
     {
       quote:
-        "Their aquaculture practices are a model for sustainability. Every order arrives fresh, every time.",
+        "Consistent grade, lustrous fibre, and a family you can actually trust. Hard to find these days.",
       author: "Anita Reddy",
-      role: "Restaurateur, Hyderabad",
+      role: "Textile Buyer, Bengaluru",
     },
     {
       quote:
@@ -105,14 +131,16 @@ export const site = {
     title: "A family farm, a quiet promise.",
     paragraphs: [
       "Suchi Farm began as a single mulberry grove and a handful of cocoons — a way for our family to live close to the land and pass something meaningful to the next generation.",
-      "Today, we tend silkworms, ponds and aquaculture beds across our farm with the same patience that started it all. Nothing here is rushed. Nothing is ever ordinary.",
+      "Today, we tend our own mulberry plantation, rear silkworms in a dedicated facility, and hand-grade every cocoon with the same patience that started it all. Nothing here is rushed.",
     ],
-    image:
-      "https://images.unsplash.com/photo-1617490439585-b855defbe904?w=1200&q=80",
+    image: ASSETS.farmBuilding,
     stats: [
-      { value: "2", label: "Generations" },
-      { value: "3", label: "Disciplines" },
-      { value: "100%", label: "Family-run" },
+      { value: "3", label: "Crafts" },
+      { value: "365", label: "Days a Year" },
+      { value: "100%", label: "Hand-tended" },
     ],
+  },
+  hero: {
+    image: ASSETS.mulberryField,
   },
 };

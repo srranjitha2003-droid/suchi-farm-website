@@ -49,8 +49,24 @@ export default function Footer() {
               Reach Us
             </p>
             <ul className="space-y-3 text-sm text-[#FAF8F5]/85 font-light">
-              <li data-testid="footer-phone">{site.contact.phone}</li>
-              <li data-testid="footer-email">{site.contact.email}</li>
+              {site.contact.phones.map((p, i) => (
+                <li key={p} data-testid={`footer-phone-${i}`}>
+                  <a
+                    href={`tel:${p.replace(/\s+/g, "")}`}
+                    className="hover:text-[#C5A059] transition-colors"
+                  >
+                    {p}
+                  </a>
+                </li>
+              ))}
+              <li data-testid="footer-email">
+                <a
+                  href={`mailto:${site.contact.email}`}
+                  className="hover:text-[#C5A059] transition-colors break-all"
+                >
+                  {site.contact.email}
+                </a>
+              </li>
               <li data-testid="footer-address">{site.contact.address}</li>
               <li data-testid="footer-hours">{site.contact.hours}</li>
             </ul>
@@ -73,7 +89,7 @@ export default function Footer() {
             tended with care.
           </p>
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#FAF8F5]/45">
-            Silk · Fishery · Aquaculture
+            Silk Cocoons · Mulberry · Grading
           </p>
         </div>
       </div>

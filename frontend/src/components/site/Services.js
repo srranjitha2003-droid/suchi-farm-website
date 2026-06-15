@@ -1,7 +1,7 @@
-import { Leaf, Fish, Droplets, ArrowUpRight } from "lucide-react";
+import { Leaf, Sprout, Award, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 
-const iconMap = { Leaf, Fish, Droplets };
+const iconMap = { Leaf, Sprout, Award };
 
 export default function Services() {
   return (
