@@ -1,7 +1,10 @@
 import { MapPin, ArrowDown } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function Hero() {
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
   return (
     <section
       id="home"
@@ -15,16 +18,17 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#1A362D]/55 via-[#1A362D]/40 to-[#1A362D]/90" />
 
-      {/* Top overline */}
       <div className="absolute top-28 left-6 md:left-12 right-6 md:right-12 flex justify-between items-center text-[#FAF8F5]/80">
         <span
           data-testid="hero-overline"
-          className="text-[11px] tracking-[0.35em] uppercase font-semibold"
+          className={`font-semibold ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.35em] uppercase"}`}
         >
-          {site.business.establishedYear}
+          {t.hero.establishedYear}
         </span>
-        <span className="hidden md:inline text-[11px] tracking-[0.35em] uppercase font-semibold">
-          Karnataka · India
+        <span
+          className={`hidden md:inline font-semibold ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.35em] uppercase"}`}
+        >
+          {t.hero.region}
         </span>
       </div>
 
@@ -32,9 +36,9 @@ export default function Hero() {
         <div className="max-w-4xl">
           <p
             data-testid="hero-eyebrow"
-            className="text-[11px] tracking-[0.4em] uppercase text-[#C5A059] font-semibold mb-8 fade-up"
+            className={`text-[#C5A059] font-semibold mb-8 fade-up ${kn ? "font-kannada text-base" : "text-[11px] tracking-[0.4em] uppercase"}`}
           >
-            Silk Cocoons · Mulberry · Fishery
+            {t.hero.eyebrow}
           </p>
           <h1
             data-testid="hero-title"
@@ -44,15 +48,15 @@ export default function Hero() {
           </h1>
           <p
             data-testid="hero-tagline"
-            className="font-display italic text-2xl md:text-3xl text-[#FAF8F5]/90 mt-6 fade-up fade-up-delay-2"
+            className={`text-[#FAF8F5]/90 mt-6 fade-up fade-up-delay-2 ${kn ? "font-kannada text-xl md:text-2xl" : "font-display italic text-2xl md:text-3xl"}`}
           >
-            {site.business.tagline}
+            {t.hero.tagline}
           </p>
           <p
             data-testid="hero-description"
-            className="text-[#FAF8F5]/85 max-w-xl mt-8 text-base md:text-lg font-light leading-relaxed fade-up fade-up-delay-2"
+            className={`text-[#FAF8F5]/85 max-w-xl mt-8 font-light leading-relaxed fade-up fade-up-delay-2 ${kn ? "font-kannada text-base" : "text-base md:text-lg"}`}
           >
-            {site.business.description}
+            {t.hero.description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-12 fade-up fade-up-delay-3">
@@ -61,17 +65,17 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-directions-btn"
-              className="inline-flex items-center justify-center gap-2 bg-[#FAF8F5] text-[#1A362D] hover:bg-[#C5A059] hover:text-[#1A362D] transition-all duration-300 rounded-full px-8 py-4 text-[12px] uppercase tracking-[0.25em] font-semibold"
+              className={`inline-flex items-center justify-center gap-2 bg-[#FAF8F5] text-[#1A362D] hover:bg-[#C5A059] transition-all duration-300 rounded-full px-8 py-4 font-semibold ${kn ? "font-kannada text-sm" : "text-[12px] uppercase tracking-[0.25em]"}`}
             >
               <MapPin className="w-4 h-4" />
-              Get Directions
+              {t.hero.getDirections}
             </a>
             <a
               href="#services"
               data-testid="hero-services-btn"
-              className="inline-flex items-center justify-center gap-2 border border-[#FAF8F5]/40 text-[#FAF8F5] hover:bg-[#FAF8F5]/10 transition-all duration-300 rounded-full px-8 py-4 text-[12px] uppercase tracking-[0.25em] font-semibold"
+              className={`inline-flex items-center justify-center gap-2 border border-[#FAF8F5]/40 text-[#FAF8F5] hover:bg-[#FAF8F5]/10 transition-all duration-300 rounded-full px-8 py-4 font-semibold ${kn ? "font-kannada text-sm" : "text-[12px] uppercase tracking-[0.25em]"}`}
             >
-              Our Services
+              {t.hero.ourServices}
             </a>
           </div>
         </div>
@@ -80,9 +84,9 @@ export default function Hero() {
       <a
         href="#about"
         data-testid="hero-scroll-indicator"
-        className="absolute bottom-8 right-6 md:right-12 z-10 text-[#FAF8F5]/70 hover:text-[#FAF8F5] transition-colors flex items-center gap-3 text-[11px] uppercase tracking-[0.3em]"
+        className={`absolute bottom-8 right-6 md:right-12 z-10 text-[#FAF8F5]/70 hover:text-[#FAF8F5] transition-colors flex items-center gap-3 ${kn ? "font-kannada text-sm" : "text-[11px] uppercase tracking-[0.3em]"}`}
       >
-        Scroll
+        {t.hero.scroll}
         <ArrowDown className="w-4 h-4 animate-bounce" />
       </a>
     </section>

@@ -11,7 +11,7 @@ const ASSETS = {
   cocoonsNetClose:  `${A}/m8qkkmy4_da5058a8-a598-4b52-b05f-54bdcb67c5a3.JPG`,
   silkwormsOnStems: `${A}/m8dyqi6w_8955d5ef-21b2-4e3f-b423-099951297ea6.JPG`,
   silkwormsTray:    `${A}/0honqi1m_17034899-ab9a-4bab-82e1-bc04bacae899.JPG`,
-  fisheryStock:     "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=1400&q=80",
+  fisheryStock:     "/fishery.jpg",
   video1:           `${A}/b93v5ixx_622452ff-979a-4c7c-9bfb-3d2465e15090.MP4`,
   video2:           `${A}/06eiexh7_cd631f24-0b2b-43cb-8537-93820e32fd40.MP4`,
 };
@@ -102,9 +102,9 @@ export const site = {
     },
     {
       type: "video",
-      src: ASSETS.video1,
-      poster: ASSETS.cocoonsNetClose,
-      alt: "Inside the rearing house",
+      src: ASSETS.video2,
+      poster: ASSETS.silkwormsOnStems,
+      alt: "Silkworms feeding live",
       span: "md:col-span-4",
     },
   ],
@@ -129,8 +129,9 @@ export const site = {
     overline: "Live from the Farm",
     title: "See it in motion.",
     description:
-      "A glimpse inside the rearing house and across our mulberry rows — the everyday rhythm of Suchi Farm.",
+      "A glimpse inside the fish pond and the silkworm rearing house — the everyday rhythm of Suchi Farm.",
     videos: [ASSETS.video1, ASSETS.video2],
-    posters: [ASSETS.cocoonsNetClose, ASSETS.cocoonsPile],
+    posters: ["/fishery.jpg", ASSETS.silkwormsOnStems],
+    captions: ["Our fish pond", "Inside the rearing house"],
   },
 };

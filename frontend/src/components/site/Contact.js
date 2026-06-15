@@ -1,8 +1,17 @@
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function Contact() {
   const { contact } = site;
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
+
+  const labelClass = kn
+    ? "font-kannada text-xs"
+    : "text-[10px] tracking-[0.3em] uppercase";
+  const valueClass = kn ? "font-kannada text-base md:text-lg" : "text-lg font-light";
+
   return (
     <section
       id="contact"
@@ -15,31 +24,31 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <p
               data-testid="contact-overline"
-              className="text-[11px] tracking-[0.35em] uppercase text-[#B85C38] font-semibold mb-6"
+              className={`text-[#B85C38] font-semibold mb-6 ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.35em] uppercase"}`}
             >
-              — Come Visit
+              — {t.contact.overline}
             </p>
             <h2
               data-testid="contact-title"
-              className="font-display text-4xl md:text-5xl lg:text-6xl text-[#1A362D] leading-[1.05] tracking-tight font-medium"
+              className={`text-[#1A362D] leading-[1.05] tracking-tight font-medium ${kn ? "font-kannada text-3xl md:text-4xl" : "font-display text-4xl md:text-5xl lg:text-6xl"}`}
             >
-              Find us on the map.
+              {t.contact.title}
             </h2>
-            <p className="text-[#4A5D54] mt-6 text-base md:text-lg font-light leading-relaxed max-w-md">
-              The farm welcomes friends, buyers, and curious neighbours alike.
-              Tap the link below for turn-by-turn directions.
+            <p
+              className={`text-[#4A5D54] mt-6 font-light leading-relaxed max-w-md ${kn ? "font-kannada text-base" : "text-base md:text-lg"}`}
+            >
+              {t.contact.description}
             </p>
 
             <div className="mt-12 space-y-2">
-              {/* Phones */}
               <div className="py-5 border-b border-[#E8E2D9] group">
                 <div className="flex items-start gap-5">
                   <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0 group-hover:bg-[#1A362D] transition-colors duration-300">
                     <Phone className="w-4 h-4 text-[#1A362D] group-hover:text-[#C5A059] transition-colors duration-300" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-2">
-                      Phone
+                    <p className={`text-[#7A8C84] font-semibold mb-2 ${labelClass}`}>
+                      {t.contact.phone}
                     </p>
                     <div className="flex flex-col gap-1">
                       {contact.phones.map((p, i) => (
@@ -47,7 +56,7 @@ export default function Contact() {
                           key={p}
                           href={`tel:${p.replace(/\s+/g, "")}`}
                           data-testid={`contact-phone-${i}`}
-                          className="text-[#1A362D] text-lg font-light hover:text-[#B85C38] transition-colors w-fit"
+                          className={`text-[#1A362D] hover:text-[#B85C38] transition-colors w-fit ${valueClass}`}
                         >
                           {p}
                         </a>
@@ -57,7 +66,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Email */}
               <a
                 href={`mailto:${contact.email}`}
                 data-testid="contact-email-link"
@@ -68,53 +76,42 @@ export default function Contact() {
                     <Mail className="w-4 h-4 text-[#1A362D] group-hover:text-[#C5A059] transition-colors duration-300" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
-                      Email
+                    <p className={`text-[#7A8C84] font-semibold mb-1 ${labelClass}`}>
+                      {t.contact.email}
                     </p>
-                    <p
-                      data-testid="contact-email"
-                      className="text-[#1A362D] text-lg font-light break-all"
-                    >
+                    <p data-testid="contact-email" className={`text-[#1A362D] break-all ${valueClass}`}>
                       {contact.email}
                     </p>
                   </div>
                 </div>
               </a>
 
-              {/* Address */}
               <div className="py-5 border-b border-[#E8E2D9] group">
                 <div className="flex items-start gap-5">
                   <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-[#1A362D]" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
-                      Address
+                    <p className={`text-[#7A8C84] font-semibold mb-1 ${labelClass}`}>
+                      {t.contact.address}
                     </p>
-                    <p
-                      data-testid="contact-address"
-                      className="text-[#1A362D] text-lg font-light"
-                    >
+                    <p data-testid="contact-address" className={`text-[#1A362D] ${valueClass}`}>
                       {contact.address}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Hours */}
               <div className="py-5 border-b border-[#E8E2D9] group">
                 <div className="flex items-start gap-5">
                   <div className="w-11 h-11 rounded-full bg-[#F2EBE1] flex items-center justify-center shrink-0">
                     <Clock className="w-4 h-4 text-[#1A362D]" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-[#7A8C84] font-semibold mb-1">
-                      Hours
+                    <p className={`text-[#7A8C84] font-semibold mb-1 ${labelClass}`}>
+                      {t.contact.hours}
                     </p>
-                    <p
-                      data-testid="contact-hours"
-                      className="text-[#1A362D] text-lg font-light"
-                    >
+                    <p data-testid="contact-hours" className={`text-[#1A362D] ${valueClass}`}>
                       {contact.hours}
                     </p>
                   </div>
@@ -127,9 +124,9 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="contact-directions-btn"
-              className="inline-flex items-center gap-3 bg-[#1A362D] text-[#FAF8F5] hover:bg-[#B85C38] transition-colors duration-300 rounded-full px-8 py-4 text-[12px] uppercase tracking-[0.25em] font-semibold mt-12"
+              className={`inline-flex items-center gap-3 bg-[#1A362D] text-[#FAF8F5] hover:bg-[#B85C38] transition-colors duration-300 rounded-full px-8 py-4 font-semibold mt-12 ${kn ? "font-kannada text-sm" : "text-[12px] uppercase tracking-[0.25em]"}`}
             >
-              Get Directions on Google Maps
+              {t.contact.directionsBtn}
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -152,9 +149,9 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="map-overlay-link"
-                className="absolute bottom-5 right-5 bg-[#FAF8F5] text-[#1A362D] hover:bg-[#C5A059] transition-colors rounded-full px-5 py-3 text-[11px] uppercase tracking-[0.25em] font-semibold inline-flex items-center gap-2 shadow-lg"
+                className={`absolute bottom-5 right-5 bg-[#FAF8F5] text-[#1A362D] hover:bg-[#C5A059] transition-colors rounded-full px-5 py-3 font-semibold inline-flex items-center gap-2 shadow-lg ${kn ? "font-kannada text-xs" : "text-[11px] uppercase tracking-[0.25em]"}`}
               >
-                Open in Maps
+                {t.contact.openInMaps}
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>

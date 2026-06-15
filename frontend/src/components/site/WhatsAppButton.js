@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function WhatsAppButton() {
-  const text = encodeURIComponent(
-    `Hello Suchi Farm, I'd like to enquire about your silk cocoons / fishery.`,
-  );
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
+  const text = encodeURIComponent(t.whatsapp.prefill);
   const href = `https://wa.me/${site.contact.whatsapp}?text=${text}`;
   return (
     <a
@@ -19,8 +20,10 @@ export default function WhatsAppButton() {
         <MessageCircle className="w-5 h-5 fill-white" />
         <span className="absolute inset-0 rounded-full bg-white/30 animate-ping opacity-60" />
       </span>
-      <span className="text-[12px] tracking-[0.15em] uppercase font-semibold hidden sm:inline">
-        Chat on WhatsApp
+      <span
+        className={`font-semibold hidden sm:inline ${kn ? "font-kannada text-sm" : "text-[12px] tracking-[0.15em] uppercase"}`}
+      >
+        {t.whatsapp.label}
       </span>
     </a>
   );

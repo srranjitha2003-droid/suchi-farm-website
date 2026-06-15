@@ -1,7 +1,24 @@
 import { MapPin } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function Footer() {
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
+
+  const navItems = [
+    { id: "home", label: t.nav.home, href: "#home" },
+    { id: "about", label: t.nav.about, href: "#about" },
+    { id: "services", label: t.nav.services, href: "#services" },
+    { id: "gallery", label: t.nav.gallery, href: "#gallery" },
+    { id: "live", label: t.nav.live, href: "#live" },
+    { id: "contact", label: t.nav.contact, href: "#contact" },
+  ];
+
+  const labelClass = kn
+    ? "font-kannada text-xs"
+    : "text-[10px] tracking-[0.3em] uppercase";
+
   return (
     <footer
       data-testid="site-footer"
@@ -20,22 +37,24 @@ export default function Footer() {
               </span>
               <span className="font-display text-3xl">{site.business.name}</span>
             </a>
-            <p className="text-[#FAF8F5]/70 font-light leading-relaxed mt-6 max-w-sm">
-              {site.business.description}
+            <p
+              className={`text-[#FAF8F5]/70 font-light leading-relaxed mt-6 max-w-sm ${kn ? "font-kannada text-sm" : ""}`}
+            >
+              {t.hero.description}
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#C5A059] font-semibold mb-5">
-              Explore
+            <p className={`text-[#C5A059] font-semibold mb-5 ${labelClass}`}>
+              {t.footer.explore}
             </p>
             <ul className="space-y-3">
-              {site.nav.map((n) => (
+              {navItems.map((n) => (
                 <li key={n.id}>
                   <a
                     href={n.href}
                     data-testid={`footer-link-${n.id}`}
-                    className="text-[#FAF8F5]/85 hover:text-[#C5A059] transition-colors text-sm"
+                    className={`text-[#FAF8F5]/85 hover:text-[#C5A059] transition-colors ${kn ? "font-kannada text-sm" : "text-sm"}`}
                   >
                     {n.label}
                   </a>
@@ -45,10 +64,12 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#C5A059] font-semibold mb-5">
-              Reach Us
+            <p className={`text-[#C5A059] font-semibold mb-5 ${labelClass}`}>
+              {t.footer.reachUs}
             </p>
-            <ul className="space-y-3 text-sm text-[#FAF8F5]/85 font-light">
+            <ul
+              className={`space-y-3 text-[#FAF8F5]/85 font-light ${kn ? "font-kannada text-sm" : "text-sm"}`}
+            >
               {site.contact.phones.map((p, i) => (
                 <li key={p} data-testid={`footer-phone-${i}`}>
                   <a
@@ -75,21 +96,24 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="footer-directions-btn"
-              className="inline-flex items-center gap-2 mt-6 text-[11px] tracking-[0.25em] uppercase text-[#C5A059] hover:text-[#FAF8F5] transition-colors"
+              className={`inline-flex items-center gap-2 mt-6 text-[#C5A059] hover:text-[#FAF8F5] transition-colors ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.25em] uppercase"}`}
             >
               <MapPin className="w-3.5 h-3.5" />
-              Get Directions
+              {t.footer.getDirections}
             </a>
           </div>
         </div>
 
         <div className="border-t border-[#FAF8F5]/15 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-xs text-[#FAF8F5]/55 tracking-wide">
-            © {new Date().getFullYear()} {site.business.name}. A family business,
-            tended with care.
+          <p
+            className={`text-[#FAF8F5]/55 tracking-wide ${kn ? "font-kannada text-xs" : "text-xs"}`}
+          >
+            © {new Date().getFullYear()} {site.business.name}. {t.footer.copyright}
           </p>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[#FAF8F5]/45">
-            Silk Cocoons · Mulberry · Fishery
+          <p
+            className={`text-[#FAF8F5]/45 ${kn ? "font-kannada text-xs" : "text-[10px] tracking-[0.3em] uppercase"}`}
+          >
+            {t.footer.tag}
           </p>
         </div>
       </div>

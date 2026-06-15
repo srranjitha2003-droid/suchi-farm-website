@@ -1,9 +1,12 @@
 import { useRef } from "react";
 import { Play } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 export default function LiveFromFarm() {
   const { liveFromFarm } = site;
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
   const refs = [useRef(null), useRef(null)];
 
   const handlePlay = (i) => {
@@ -23,18 +26,20 @@ export default function LiveFromFarm() {
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <p
             data-testid="live-overline"
-            className="text-[11px] tracking-[0.35em] uppercase text-[#B85C38] font-semibold mb-6"
+            className={`text-[#B85C38] font-semibold mb-6 ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.35em] uppercase"}`}
           >
-            — {liveFromFarm.overline}
+            — {t.live.overline}
           </p>
           <h2
             data-testid="live-title"
-            className="font-display text-4xl md:text-5xl lg:text-6xl text-[#1A362D] leading-[1.05] tracking-tight font-medium"
+            className={`text-[#1A362D] leading-[1.05] tracking-tight font-medium ${kn ? "font-kannada text-3xl md:text-4xl" : "font-display text-4xl md:text-5xl lg:text-6xl"}`}
           >
-            {liveFromFarm.title}
+            {t.live.title}
           </h2>
-          <p className="text-[#4A5D54] mt-6 text-base md:text-lg font-light leading-relaxed">
-            {liveFromFarm.description}
+          <p
+            className={`text-[#4A5D54] mt-6 font-light leading-relaxed ${kn ? "font-kannada text-base" : "text-base md:text-lg"}`}
+          >
+            {t.live.description}
           </p>
         </div>
 
@@ -70,9 +75,11 @@ export default function LiveFromFarm() {
                   <Play className="w-6 h-6 text-[#1A362D] fill-[#1A362D] ml-0.5" />
                 </span>
               </button>
-              <div className="absolute top-5 left-5 bg-[#FAF8F5]/95 backdrop-blur-md rounded-full px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase text-[#1A362D] font-semibold flex items-center gap-1.5 pointer-events-none">
+              <div
+                className={`absolute top-5 left-5 bg-[#FAF8F5]/95 backdrop-blur-md rounded-full px-3 py-1.5 text-[#1A362D] font-semibold flex items-center gap-1.5 pointer-events-none ${kn ? "font-kannada text-xs" : "text-[10px] tracking-[0.25em] uppercase"}`}
+              >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B85C38] animate-pulse" />
-                Live
+                {t.live.liveBadge}
               </div>
             </div>
           ))}

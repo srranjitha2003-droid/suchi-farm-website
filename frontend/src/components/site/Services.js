@@ -1,9 +1,13 @@
 import { Leaf, Sprout, Award, Fish, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
+import { useLang } from "@/i18n/LanguageContext";
 
-const iconMap = { Leaf, Sprout, Award, Fish };
+const iconList = [Award, Sprout, Fish];
 
 export default function Services() {
+  const { t, lang } = useLang();
+  const kn = lang === "kn";
+
   return (
     <section
       id="services"
@@ -15,42 +19,46 @@ export default function Services() {
           <div className="max-w-2xl">
             <p
               data-testid="services-overline"
-              className="text-[11px] tracking-[0.35em] uppercase text-[#B85C38] font-semibold mb-6"
+              className={`text-[#B85C38] font-semibold mb-6 ${kn ? "font-kannada text-sm" : "text-[11px] tracking-[0.35em] uppercase"}`}
             >
-              — What We Do
+              — {t.services.overline}
             </p>
             <h2
               data-testid="services-title"
-              className="font-display text-4xl md:text-5xl lg:text-6xl text-[#1A362D] leading-[1.05] tracking-tight font-medium"
+              className={`text-[#1A362D] leading-[1.05] tracking-tight font-medium ${kn ? "font-kannada text-3xl md:text-4xl" : "font-display text-4xl md:text-5xl lg:text-6xl"}`}
             >
-              Two crafts, one family.
+              {t.services.title}
             </h2>
           </div>
-          <p className="text-[#4A5D54] max-w-md text-base font-light leading-relaxed">
-            Every part of Suchi Farm is tended by hand. Below is what we grow,
-            raise, and care for — season after season.
+          <p
+            className={`text-[#4A5D54] max-w-md font-light leading-relaxed ${kn ? "font-kannada text-base" : "text-base"}`}
+          >
+            {t.services.subhead}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {site.services.map((s, i) => {
-            const Icon = iconMap[s.icon] || Leaf;
+          {t.services.items.map((s, i) => {
+            const Icon = iconList[i] || Leaf;
+            const img = site.services[i]?.image;
             return (
               <article
-                key={s.title}
+                key={i}
                 data-testid={`service-card-${i}`}
                 className="group bg-white rounded-3xl overflow-hidden border border-[#E8E2D9] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-20px_rgba(26,54,45,0.25)]"
               >
                 <div className="relative aspect-[5/4] overflow-hidden">
                   <img
-                    src={s.image}
+                    src={img}
                     alt={s.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-5 left-5 bg-[#FAF8F5]/95 backdrop-blur-md rounded-full w-12 h-12 flex items-center justify-center">
                     <Icon className="w-5 h-5 text-[#1A362D]" />
                   </div>
-                  <span className="absolute top-5 right-5 bg-[#1A362D] text-[#FAF8F5] px-3 py-1 rounded-full text-[10px] tracking-[0.2em] uppercase font-semibold">
+                  <span
+                    className={`absolute top-5 right-5 bg-[#1A362D] text-[#FAF8F5] px-3 py-1 rounded-full font-semibold ${kn ? "font-kannada text-xs" : "text-[10px] tracking-[0.2em] uppercase"}`}
+                  >
                     {s.tag}
                   </span>
                 </div>
@@ -58,7 +66,7 @@ export default function Services() {
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <h3
                       data-testid={`service-title-${i}`}
-                      className="font-display text-2xl md:text-3xl text-[#1A362D] font-medium leading-tight"
+                      className={`text-[#1A362D] font-medium leading-tight ${kn ? "font-kannada text-xl md:text-2xl" : "font-display text-2xl md:text-3xl"}`}
                     >
                       {s.title}
                     </h3>
@@ -66,7 +74,7 @@ export default function Services() {
                   </div>
                   <p
                     data-testid={`service-description-${i}`}
-                    className="text-[#4A5D54] text-[15px] font-light leading-relaxed"
+                    className={`text-[#4A5D54] font-light leading-relaxed ${kn ? "font-kannada text-sm" : "text-[15px]"}`}
                   >
                     {s.description}
                   </p>
