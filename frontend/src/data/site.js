@@ -3,13 +3,15 @@ const A = "https://customer-assets.emergentagent.com/job_family-store-hub-1/arti
 
 // Verified asset mapping (based on visual inspection):
 const ASSETS = {
-  mulberryField:    `${A}/wsyz8kwd_62d68a61-4714-4d8d-b3e9-a695e582ad00.JPG`, // green mulberry plantation rows
-  farmBuilding:     `${A}/vv1xv8ba_b5c2207d-c486-42e8-a7e8-ad815c947ad3.JPG`, // farm entrance w/ Kannada signboard
-  cocoonsPile:      `${A}/4x48nhrd_c6d9b91f-e14f-4733-9a86-2e53eab9b511.JPG`, // pile of white silk cocoons
-  cocoonsNetWide:   `${A}/7wndfjsq_87a35f11-49ed-4d41-a98b-735df3a3bbe7.JPG`, // cocoons in orange netting (wide)
-  cocoonsNetClose:  `${A}/m8qkkmy4_da5058a8-a598-4b52-b05f-54bdcb67c5a3.JPG`, // cocoons in orange netting (close)
-  silkwormsOnStems: `${A}/m8dyqi6w_8955d5ef-21b2-4e3f-b423-099951297ea6.JPG`, // silkworms feeding on mulberry stems
-  silkwormsTray:    `${A}/0honqi1m_17034899-ab9a-4bab-82e1-bc04bacae899.JPG`, // silkworms in tray, sunlit
+  mulberryField:    `${A}/wsyz8kwd_62d68a61-4714-4d8d-b3e9-a695e582ad00.JPG`,
+  mulberryClose:    `${A}/s1cxgsyo_282c86da-51c9-4c82-b80e-f756da8be3bf.JPG`,
+  farmBuilding:     `${A}/vv1xv8ba_b5c2207d-c486-42e8-a7e8-ad815c947ad3.JPG`,
+  cocoonsPile:      `${A}/4x48nhrd_c6d9b91f-e14f-4733-9a86-2e53eab9b511.JPG`,
+  cocoonsNetWide:   `${A}/7wndfjsq_87a35f11-49ed-4d41-a98b-735df3a3bbe7.JPG`,
+  cocoonsNetClose:  `${A}/m8qkkmy4_da5058a8-a598-4b52-b05f-54bdcb67c5a3.JPG`,
+  silkwormsOnStems: `${A}/m8dyqi6w_8955d5ef-21b2-4e3f-b423-099951297ea6.JPG`,
+  silkwormsTray:    `${A}/0honqi1m_17034899-ab9a-4bab-82e1-bc04bacae899.JPG`,
+  fisheryStock:     "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=1400&q=80",
   video1:           `${A}/b93v5ixx_622452ff-979a-4c7c-9bfb-3d2465e15090.MP4`,
   video2:           `${A}/06eiexh7_cd631f24-0b2b-43cb-8537-93820e32fd40.MP4`,
 };
@@ -20,11 +22,12 @@ export const site = {
     nameKannada: "ಸುಚಿ ಫಾರಂ",
     tagline: "Nurturing Heritage, Cultivating Purity",
     description:
-      "A family legacy crafting premium silk cocoons from our own mulberry plantation in B. Seehalli, Karnataka — rooted in tradition, refined for today.",
+      "A family legacy crafting premium silk cocoons and raising responsible freshwater fish in B. Seehalli, Karnataka — rooted in tradition, refined for today.",
     establishedYear: "A Family Legacy",
   },
   contact: {
     phones: ["+91 96402 14052", "+91 70134 43123"],
+    whatsapp: "919640214052",
     email: "scravikumar1968@gmail.com",
     address: "Suchi Farm, Silk Rearing House, B. Seehalli, Karnataka 571101",
     hours: "7:00 AM – 7:00 PM · All days of the week",
@@ -38,7 +41,6 @@ export const site = {
     { label: "About", href: "#about", id: "about" },
     { label: "Services", href: "#services", id: "services" },
     { label: "Gallery", href: "#gallery", id: "gallery" },
-    { label: "Testimonials", href: "#testimonials", id: "testimonials" },
     { label: "Contact", href: "#contact", id: "contact" },
   ],
   services: [
@@ -46,7 +48,7 @@ export const site = {
       title: "Silk Cocoon Production",
       tag: "Sericulture",
       description:
-        "Premium mulberry-fed silkworms reared in our dedicated rearing house, yielding lustrous, even-fibre cocoons graded entirely by hand.",
+        "Premium mulberry-fed silkworms reared in our dedicated rearing house, yielding lustrous, even-fibre cocoons graded entirely by hand — ready for serious bulk buyers.",
       image: ASSETS.cocoonsPile,
       icon: "Award",
     },
@@ -59,12 +61,12 @@ export const site = {
       icon: "Sprout",
     },
     {
-      title: "Cocoon Grading",
-      tag: "Hand-graded",
+      title: "Fishery",
+      tag: "Freshwater",
       description:
-        "Every cocoon is sorted by hand on traditional racks and netting — only the finest are passed on to buyers and weavers.",
-      image: ASSETS.cocoonsNetWide,
-      icon: "Leaf",
+        "Healthy, ethically raised freshwater fish from clean, oxygen-rich ponds on the farm — supplying local markets and discerning kitchens.",
+      image: ASSETS.fisheryStock,
+      icon: "Fish",
     },
   ],
   gallery: [
@@ -82,8 +84,8 @@ export const site = {
     },
     {
       type: "image",
-      src: ASSETS.mulberryField,
-      alt: "Our mulberry plantation",
+      src: ASSETS.mulberryClose,
+      alt: "Mulberry plants on the farm",
       span: "md:col-span-5",
     },
     {
@@ -106,41 +108,29 @@ export const site = {
       span: "md:col-span-4",
     },
   ],
-  testimonials: [
-    {
-      quote:
-        "The finest silk cocoons we've ever sourced. Suchi Farm's dedication to quality and tradition is genuinely unmatched.",
-      author: "R. Venkatesh",
-      role: "Silk Weaver, Kanchipuram",
-    },
-    {
-      quote:
-        "Consistent grade, lustrous fibre, and a family you can actually trust. Hard to find these days.",
-      author: "Anita Reddy",
-      role: "Textile Buyer, Bengaluru",
-    },
-    {
-      quote:
-        "A rare blend of warmth, integrity, and craft. Working with the Suchi family feels like working with friends.",
-      author: "Kiran Rao",
-      role: "Wholesale Buyer",
-    },
-  ],
   about: {
     overline: "Our Story",
     title: "A family farm, a quiet promise.",
     paragraphs: [
       "Suchi Farm began as a single mulberry grove and a handful of cocoons — a way for our family to live close to the land and pass something meaningful to the next generation.",
-      "Today, we tend our own mulberry plantation, rear silkworms in a dedicated facility, and hand-grade every cocoon with the same patience that started it all. Nothing here is rushed.",
+      "Today, we tend our own mulberry plantation, rear silkworms in a dedicated facility, hand-grade every cocoon, and raise freshwater fish in clean ponds — all with the same patience that started it all.",
     ],
     image: ASSETS.farmBuilding,
     stats: [
-      { value: "3", label: "Crafts" },
+      { value: "2", label: "Crafts" },
       { value: "365", label: "Days a Year" },
       { value: "100%", label: "Hand-tended" },
     ],
   },
   hero: {
     image: ASSETS.mulberryField,
+  },
+  liveFromFarm: {
+    overline: "Live from the Farm",
+    title: "See it in motion.",
+    description:
+      "A glimpse inside the rearing house and across our mulberry rows — the everyday rhythm of Suchi Farm.",
+    videos: [ASSETS.video1, ASSETS.video2],
+    posters: [ASSETS.cocoonsNetClose, ASSETS.cocoonsPile],
   },
 };

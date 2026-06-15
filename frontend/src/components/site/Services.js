@@ -1,7 +1,7 @@
-import { Leaf, Sprout, Award, ArrowUpRight } from "lucide-react";
+import { Leaf, Sprout, Award, Fish, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 
-const iconMap = { Leaf, Sprout, Award };
+const iconMap = { Leaf, Sprout, Award, Fish };
 
 export default function Services() {
   return (
@@ -23,7 +23,7 @@ export default function Services() {
               data-testid="services-title"
               className="font-display text-4xl md:text-5xl lg:text-6xl text-[#1A362D] leading-[1.05] tracking-tight font-medium"
             >
-              Three crafts, one family.
+              Two crafts, one family.
             </h2>
           </div>
           <p className="text-[#4A5D54] max-w-md text-base font-light leading-relaxed">

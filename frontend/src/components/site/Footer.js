@@ -89,7 +89,7 @@ export default function Footer() {
             tended with care.
           </p>
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#FAF8F5]/45">
-            Silk Cocoons · Mulberry · Grading
+            Silk Cocoons · Mulberry · Fishery
           </p>
         </div>
       </div>

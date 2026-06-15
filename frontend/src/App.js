@@ -5,9 +5,10 @@ import Hero from "@/components/site/Hero";
 import About from "@/components/site/About";
 import Services from "@/components/site/Services";
 import Gallery from "@/components/site/Gallery";
-import Testimonials from "@/components/site/Testimonials";
+import LiveFromFarm from "@/components/site/LiveFromFarm";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
+import WhatsAppButton from "@/components/site/WhatsAppButton";
 
 const Landing = () => {
   return (
@@ -18,10 +19,11 @@ const Landing = () => {
         <About />
         <Services />
         <Gallery />
-        <Testimonials />
+        <LiveFromFarm />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

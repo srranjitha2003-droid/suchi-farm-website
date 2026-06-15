@@ -34,7 +34,7 @@ export default function Hero() {
             data-testid="hero-eyebrow"
             className="text-[11px] tracking-[0.4em] uppercase text-[#C5A059] font-semibold mb-8 fade-up"
           >
-            Sericulture · Mulberry · Silk Cocoons
+            Silk Cocoons · Mulberry · Fishery
           </p>
           <h1
             data-testid="hero-title"

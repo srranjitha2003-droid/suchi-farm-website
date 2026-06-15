@@ -26,18 +26,13 @@ Resolved address: SUCHI FARM Productions, B. Seehalli, Karnataka 571101.
 - **Content layer**: All copy, images, contact details centralized in `/app/frontend/src/data/site.js`.
 
 ## Sections shipped (2026-06-15)
-- Hero with mulberry plantation backdrop, brand title, dual CTAs (Get Directions + Our Services).
-- About: Kannada brand mark, family story, 3 stats (Crafts / Days / Hand-tended), farm signboard photo with pull-quote.
-- Services: 3 cards — Silk Cocoon Production, Mulberry Cultivation, Cocoon Grading.
-- Gallery: 6-tile bento grid with images + auto-playing muted video.
-- Testimonials: rotating quote carousel on deep-green background.
-- Contact: 2 phones + email + address + hours with click-to-call/email, real Google Maps iframe centered on the farm, primary "Get Directions" CTA.
-- Footer with quick links, contact, copyright.
+- Hero, About, Services (Silk Cocoon Production · Mulberry Cultivation · Fishery), Gallery, Live from the Farm (autoplays both farm videos), Contact, Footer.
+- Floating "Chat on WhatsApp" button on every page (deep-links to +91 96402 14052 with prefilled enquiry).
+- Testimonials section removed per family request (no real bulk-buyer testimonials available).
 
 ## Backlog / Next tasks
-- **P0**: Confirm whether fishery & aquaculture services should be re-added (currently silk-focused based on photos and signboard).
-- **P1**: Replace 3 placeholder testimonials with real customer quotes (with permission).
-- **P2**: Add a floating WhatsApp button using one of the family's mobile numbers.
-- **P2**: Add a small "Live from the Farm" reel using the uploaded videos (currently 1 is in gallery; the 2nd is unused).
-- **P2**: SEO meta tags, Open Graph image, favicon, sitemap.xml.
+- **P1**: Replace stock clownfish image in Fishery service card with an actual fish/pond photo from the farm.
+- **P2**: Add a logo / favicon when available.
+- **P2**: SEO meta tags, Open Graph image, sitemap.xml.
 - **P2**: Optional Kannada/English language toggle.
+- **P2**: A discreet "Bulk Enquiry" form (or stay WhatsApp-only).
