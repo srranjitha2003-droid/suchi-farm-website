@@ -1,0 +1,159 @@
+{
+  "theme": {
+    "mode": "light",
+    "archetype": "Organic & Earthy",
+    "description": "Warm and traditional yet modern and minimalist. Evokes heritage, agriculture, and nature."
+  },
+  "colors": {
+    "background": {
+      "default": "#FAF8F5",
+      "alt": "#F2EBE1",
+      "card": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#1A362D",
+      "secondary": "#4A5D54",
+      "muted": "#7A8C84"
+    },
+    "primary": {
+      "DEFAULT": "#1A362D",
+      "foreground": "#FFFFFF",
+      "hover": "#2C4A3F"
+    },
+    "accent": {
+      "terracotta": "#B85C38",
+      "gold": "#C5A059",
+      "sand": "#E8E2D9"
+    },
+    "border": "#E8E2D9"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Manrope', sans-serif"
+    },
+    "cdn_links": [
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
+      "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+    ],
+    "scales": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter leading-none font-medium",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-tight font-medium",
+      "h3": "text-2xl sm:text-3xl tracking-tight leading-snug font-medium",
+      "body": "text-base leading-relaxed text-secondary font-light",
+      "overline": "text-sm tracking-[0.2em] uppercase font-semibold text-accent-terracotta"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "section_padding": "py-20 md:py-32",
+    "grid": {
+      "bento_marketing": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12"
+    },
+    "radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-full",
+      "image": "rounded-3xl"
+    }
+  },
+  "components": {
+    "header": {
+      "style": "sticky top-0 z-50 backdrop-blur-xl bg-[#FAF8F5]/80 border-b border-[#E8E2D9]/50",
+      "links": ["Home", "About", "Services", "Gallery", "Testimonials", "Contact"]
+    },
+    "buttons": {
+      "primary": "bg-primary text-white hover:bg-primary-hover transition-colors duration-300 rounded-full px-8 py-4 text-sm uppercase tracking-widest font-semibold",
+      "secondary": "border border-primary text-primary hover:bg-primary/5 transition-colors duration-300 rounded-full px-8 py-4 text-sm uppercase tracking-widest font-semibold",
+      "accent": "bg-accent-terracotta text-white hover:bg-opacity-90 transition-colors duration-300 rounded-full px-8 py-4 text-sm uppercase tracking-widest font-semibold"
+    },
+    "cards": {
+      "service": "bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1",
+      "testimonial": "bg-background-alt p-10 rounded-2xl border border-border"
+    }
+  },
+  "sections": [
+    {
+      "name": "Hero",
+      "layout": "Relative full-width container (h-[90vh] min-h-[600px]) with background image. Overlay: bg-black/40. Content vertically centered.",
+      "content": {
+        "title": "Suchi Farm",
+        "subtitle": "Nurturing Heritage, Cultivating Purity",
+        "description": "A family legacy of premium silk cocoon production, ethical fishery, and sustainable aquaculture.",
+        "ctas": [
+          {"text": "Get Directions", "action": "Google Maps Link"},
+          {"text": "Our Services", "action": "Scroll to Services"}
+        ]
+      },
+      "media": "https://images.unsplash.com/photo-1533757879476-8f4a3cb1ae4b"
+    },
+    {
+      "name": "About",
+      "layout": "Split asymmetric grid (md:grid-cols-12). Left side (col-span-5) text with earthy overline. Right side (col-span-6 col-start-7) tall rounded image.",
+      "media": "https://images.unsplash.com/photo-1617490439585-b855defbe904"
+    },
+    {
+      "name": "Services",
+      "layout": "3-column grid (grid-cols-1 md:grid-cols-3 gap-8). Cards with top image, icon, and text.",
+      "items": [
+        {
+          "title": "Silk Cocoon Production",
+          "description": "Premium sericulture yielding high-quality silk threads through traditional and sustainable mulberry farming.",
+          "image": "https://images.unsplash.com/photo-1677142707414-e6ce16085a9a",
+          "icon": "lucide:Leaf"
+        },
+        {
+          "title": "Fishery",
+          "description": "Responsible fish farming providing fresh, healthy, and ethically raised fish for local communities.",
+          "image": "https://images.unsplash.com/photo-1541441056316-443fff347c40",
+          "icon": "lucide:Fish"
+        },
+        {
+          "title": "Aquaculture",
+          "description": "Modern aquatic farming techniques integrated with natural ecosystems for sustainable water resource management.",
+          "image": "https://images.unsplash.com/photo-1766744489655-328ec3d4f417",
+          "icon": "lucide:Droplets"
+        }
+      ]
+    },
+    {
+      "name": "Gallery",
+      "layout": "Bento grid (Tetris mode) mixing square and tall spans for visual interest.",
+      "images": [
+        "https://images.unsplash.com/photo-1580133750060-05e667fe0318",
+        "https://images.unsplash.com/photo-1727696726111-b20cfcb027bb",
+        "https://images.unsplash.com/photo-1528164604878-28ea0fb4f462",
+        "https://images.unsplash.com/photo-1654526645468-9ae1cde48fe2"
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "layout": "Carousel/Swiper showing 1.5 to 3 cards depending on viewport. Minimal cards with large serif quotes.",
+      "style": "bg-primary text-white py-24",
+      "quotes": [
+        "The finest silk cocoons we've ever sourced. Suchi Farm's dedication to quality is unmatched.",
+        "Their aquaculture practices are a model for sustainability. Always fresh and reliable."
+      ]
+    },
+    {
+      "name": "Contact",
+      "layout": "Two columns. Left: Contact details (Phone, Email, Hours) & 'Get Directions' CTA. Right: Embedded Google Maps iframe.",
+      "details": {
+        "google_maps_url": "https://maps.app.goo.gl/81Z4HTzcm4U78QpP6?g_st=ic",
+        "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15228.69238384931!2d78.53051411500355!3d17.4034870020149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzEyLjYiTiA3OMKwMzEnNDkuOSJF!5e0!3m2!1sen!2sin!4v1689100000000!5m2!1sen!2sin"
+      }
+    }
+  ],
+  "motion": {
+    "hover": "transition-all duration-300 ease-out",
+    "reveal": "framer-motion fade-up with staggered children (staggerChildren: 0.1)"
+  },
+  "instructions_to_main_agent": [
+    "Use standard HTML tags (div, section) styled with Tailwind for the marketing layouts. Avoid Shadcn Cards if they restrict layout fluidity.",
+    "Implement Lucide React icons for the services section.",
+    "Ensure the Get Directions buttons link strictly to the provided URL: https://maps.app.goo.gl/81Z4HTzcm4U78QpP6?g_st=ic.",
+    "Apply custom fonts via Google Fonts in index.css. Headings MUST be Cormorant Garamond, and body MUST be Manrope.",
+    "For the hero overlay, use bg-black/40 over the image to maintain text readability while letting the image breathe.",
+    "Use pure functional components in .js extensions.",
+    "Every interactive element and key text area MUST include a data-testid attribute in kebab-case."
+  ]
+}
